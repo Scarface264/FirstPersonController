@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://687akawl6ql2"]
+
+[ext_resource type="Script" uid="uid://d1vi3jy60sn31" path="res://Scripts/zombie.gd" id="1_h3kin"]
+[ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="2_n70j1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hx1nv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n70j1"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rx1sp"]
+material = ExtResource("2_n70j1")
+size = Vector3(0.6538086, 0.51361084, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iyl7r"]
+points = PackedVector3Array(-0.3247357, -0.2568, -0.49254447, 0.32660788, 0.25498074, 0.5, 0.3217153, -0.2568, 0.49254447, 0.32660788, 0.25498074, -0.5, -0.3269, 0.25283703, 0.49584252, -0.3269, 0.25283703, -0.49584252, 0.3217153, -0.2568, -0.49254447, -0.3247357, -0.2568, 0.49254447)
+
+[node name="Zombie" type="CharacterBody3D" unique_id=847699558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_h3kin")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=160200452]
+mesh = SubResource("BoxMesh_hx1nv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1833634926]
+shape = SubResource("ConvexPolygonShape3D_n70j1")
+
+[node name="Bag" type="RigidBody3D" parent="." unique_id=1103532833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9237896, 0, 0.15786874)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bag" unique_id=1732412652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1730957, 0.6046213, 0)
+mesh = SubResource("BoxMesh_rx1sp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bag" unique_id=480139951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1730957, 0.6046213, 0)
+shape = SubResource("ConvexPolygonShape3D_iyl7r")

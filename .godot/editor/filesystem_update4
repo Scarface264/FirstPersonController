@@ -1,0 +1,5 @@
+res://Scenes/World.tscn
+res://Scripts/Player.gd
+res://Scenes/zombie.tscn
+res://Scenes/hook.tscn
+res://Scripts/hook.gd

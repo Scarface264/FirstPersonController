@@ -1,4 +1,6 @@
 extends CharacterBody3D
+var hook_scene = preload("res://Scenes/hook.tscn")
+
 
 var speed
 const WALK_SPEED = 5.0
@@ -30,7 +32,20 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+				throw_cube()
+				
+			
+func throw_cube():
+	
+	var instance = hook_scene.instantiate()
+	instance.position=$Head/Camera3D/throw_origin.global_position
+	instance.transform.basis=$Head/Camera3D/throw_origin.global_transform.basis
+	get_parent().add_child(instance)
+	
 
 
 func _physics_process(delta):
