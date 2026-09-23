@@ -35,10 +35,10 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-				throw_cube()
+	#if event is InputEventMouseButton and event.pressed:
+		#if event.button_index == MOUSE_BUTTON_LEFT:
+			#if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+				#throw_cube()
 				
 			
 func throw_cube():

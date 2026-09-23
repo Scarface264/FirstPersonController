@@ -1,3 +1,5 @@
 res://Scenes/world.gd
 res://Scenes/World.tscn
 res://Scripts/Player.gd
+res://Scenes/fishing_rod.tscn
+res://Scenes/fishing_rod.gd

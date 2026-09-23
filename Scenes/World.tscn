@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://oh8l3b7elm2t" path="res://Scripts/Player.gd" id="1_1d73w"]
 [ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
 [ext_resource type="Script" uid="uid://hxl5l0rh7kj7" path="res://Scenes/world.gd" id="1_y7y61"]
+[ext_resource type="PackedScene" uid="uid://c1kd3nia1sami" path="res://Scenes/fishing_rod.tscn" id="5_45d1s"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_te4rd"]
 [ext_resource type="PackedScene" uid="uid://687akawl6ql2" path="res://Scenes/zombie.tscn" id="6_45d1s"]
 
@@ -65,6 +66,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
 [node name="throw_origin" type="Node3D" parent="Player/Head/Camera3D" unique_id=818415133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1765392)
+
+[node name="FishingRod" parent="Player/Head/Camera3D" unique_id=859916927 instance=ExtResource("5_45d1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2893834, -0.5265169, -0.86505276)
 
 [node name="Zombie" parent="." unique_id=847699558 instance=ExtResource("6_45d1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0997157, 0.5, 7.1841717)
