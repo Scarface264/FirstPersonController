@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://oh8l3b7elm2t" path="res://Scripts/Player.gd" id="1_1d73w"]
 [ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
-[ext_resource type="Script" uid="uid://hxl5l0rh7kj7" path="res://Scenes/world.gd" id="1_y7y61"]
+[ext_resource type="Script" uid="uid://hxl5l0rh7kj7" path="res://Scripts/world.gd" id="1_y7y61"]
 [ext_resource type="PackedScene" uid="uid://c1kd3nia1sami" path="res://Scenes/fishing_rod.tscn" id="5_45d1s"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_te4rd"]
 [ext_resource type="PackedScene" uid="uid://687akawl6ql2" path="res://Scenes/zombie.tscn" id="6_45d1s"]

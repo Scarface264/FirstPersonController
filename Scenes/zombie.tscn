@@ -2,36 +2,46 @@
 
 [ext_resource type="Script" uid="uid://d1vi3jy60sn31" path="res://Scripts/zombie.gd" id="1_h3kin"]
 [ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="2_n70j1"]
+[ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="3_iyl7r"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_hx1nv"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iyl7r"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n70j1"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vy0uf"]
+points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
-[sub_resource type="BoxMesh" id="BoxMesh_rx1sp"]
-material = ExtResource("2_n70j1")
-size = Vector3(0.6538086, 0.51361084, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_vy0uf"]
+material = ExtResource("3_iyl7r")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iyl7r"]
-points = PackedVector3Array(-0.3247357, -0.2568, -0.49254447, 0.32660788, 0.25498074, 0.5, 0.3217153, -0.2568, 0.49254447, 0.32660788, 0.25498074, -0.5, -0.3269, 0.25283703, 0.49584252, -0.3269, 0.25283703, -0.49584252, 0.3217153, -0.2568, -0.49254447, -0.3247357, -0.2568, 0.49254447)
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h3kin"]
+material = ExtResource("2_n70j1")
 
 [node name="Zombie" type="CharacterBody3D" unique_id=847699558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_h3kin")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=160200452]
-mesh = SubResource("BoxMesh_hx1nv")
+mesh = SubResource("CapsuleMesh_iyl7r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1833634926]
-shape = SubResource("ConvexPolygonShape3D_n70j1")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=573144863]
+shape = SubResource("ConvexPolygonShape3D_vy0uf")
 
-[node name="Bag" type="RigidBody3D" parent="." unique_id=1103532833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9237896, 0, 0.15786874)
+[node name="Crate2" type="RigidBody3D" parent="." unique_id=514820692 groups=["catchable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15943146, 0.62997663, 1.2666202)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bag" unique_id=1732412652]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1730957, 0.6046213, 0)
-mesh = SubResource("BoxMesh_rx1sp")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Crate2" unique_id=1967404857]
+mesh = SubResource("BoxMesh_vy0uf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bag" unique_id=480139951]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1730957, 0.6046213, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate2" unique_id=424474522]
+shape = SubResource("ConvexPolygonShape3D_iyl7r")
+
+[node name="Crate" type="RigidBody3D" parent="Crate2" unique_id=1264712329 groups=["catchable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09746015, -0.11786842, -2.5384142)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Crate2/Crate" unique_id=791397831]
+mesh = SubResource("BoxMesh_h3kin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate2/Crate" unique_id=1698144915]
 shape = SubResource("ConvexPolygonShape3D_iyl7r")

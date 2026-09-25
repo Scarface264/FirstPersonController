@@ -1,5 +1,7 @@
-res://Scenes/zombie.tscn
+res://Scenes/fishing_rod.tscn
 res://Scenes/World.tscn
+res://Scenes/zombie.tscn
+res://Scripts/Player.gd
+res://Scripts/zombie.gd
 res://Scenes/fishing_rod.gd
 res://Scenes/world.gd
-res://Scripts/zombie.gd

@@ -140,7 +140,7 @@ func catch_object(object: Node3D):
 	var caught_transform := object.global_transform
 
 	# If the object is a RigidBody3D, stop its physics movement.
-	if object is RigidBody3D:
+	if object is RigidBody3D or Node3D:
 		object.freeze = true
 		object.linear_velocity = Vector3.ZERO
 		object.angular_velocity = Vector3.ZERO

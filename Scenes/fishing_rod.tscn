@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1kd3nia1sami"]
 
-[ext_resource type="Script" uid="uid://bcce8di1vybnd" path="res://Scenes/fishing_rod.gd" id="1_q27nk"]
+[ext_resource type="Script" uid="uid://bcce8di1vybnd" path="res://Scripts/fishing_rod.gd" id="1_q27nk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xlfvh"]
 size = Vector3(0.106933594, 1, 0.34277344)
@@ -22,7 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03942257, 0, -0.34758914)
 mesh = SubResource("BoxMesh_xlfvh")
 
 [node name="Line" type="MeshInstance3D" parent="." unique_id=1108398782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022449583, 0.25969946, -0.5512436)
+transform = Transform3D(1, 0, 0, 0, 0.0347246, -0.9993969, 0, 0.9993969, 0.0347246, -0.022449583, 0.44826794, -0.5512436)
 mesh = SubResource("CapsuleMesh_m7wbm")
 
 [node name="Bobber" type="RigidBody3D" parent="." unique_id=551174877]

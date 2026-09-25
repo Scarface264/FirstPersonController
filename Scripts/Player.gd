@@ -41,12 +41,7 @@ func _unhandled_input(event):
 				#throw_cube()
 				
 			
-func throw_cube():
-	
-	var instance = hook_scene.instantiate()
-	instance.position=$Head/Camera3D/throw_origin.global_position
-	instance.transform.basis=$Head/Camera3D/throw_origin.global_transform.basis
-	get_parent().add_child(instance)
+
 	
 
 
