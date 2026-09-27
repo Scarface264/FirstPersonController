@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://hxl5l0rh7kj7" path="res://Scripts/world.gd" id="1_y7y61"]
 [ext_resource type="PackedScene" uid="uid://c1kd3nia1sami" path="res://Scenes/fishing_rod.tscn" id="5_45d1s"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_te4rd"]
-[ext_resource type="PackedScene" uid="uid://687akawl6ql2" path="res://Scenes/zombie.tscn" id="6_45d1s"]
+[ext_resource type="Script" uid="uid://qsqxut731f8b" path="res://Scripts/path_follow_3d.gd" id="6_y7y61"]
+[ext_resource type="PackedScene" uid="uid://cp1e4t6hhiuyy" path="res://Scenes/test_zombie.tscn" id="7_y7y61"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,13 +30,22 @@ glow_enabled = true
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_45d1s"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
+[sub_resource type="Curve3D" id="Curve3D_45d1s"]
+closed = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.078211, 0.001001358, 11.798627, 0, 0, 0, 0, 0, 0, -11.083906, 0.0010004044, 16.787403, 0, 0, 0, 0, 0, 0, -9.1521, 0.001001358, -16.339355, 0, 0, 0, 0, 0, 0, 11.862987, 0.0010004044, -3.283762),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
 [node name="World" type="Node3D" unique_id=990598365]
 script = ExtResource("1_y7y61")
 
 [node name="Map" type="Node3D" parent="." unique_id=1777326484]
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Map" unique_id=2063210314]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.4861526, 0, -5.2968903)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.45884, 0, -14.940556)
 material_override = ExtResource("5_te4rd")
 use_collision = true
 collision_layer = 3
@@ -57,7 +67,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=774501822]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6277814, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.818795, 4.6277814, 1.2086521)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_1d73w")
@@ -80,12 +90,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1765392)
 
 [node name="FishingRod" parent="Player/Head/Camera3D" unique_id=859916927 instance=ExtResource("5_45d1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2893834, -0.5265169, -0.86505276)
-
-[node name="Zombie" parent="." unique_id=847699558 instance=ExtResource("6_45d1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0997157, 0.5, 7.1841717)
-
-[node name="Target" type="Node3D" parent="." unique_id=1986723984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0794215, 0, -10.78446)
 
 [node name="Crate hold" type="Node3D" parent="." unique_id=2143751048]
 
@@ -115,3 +119,14 @@ mesh = SubResource("BoxMesh_hx1nv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crate hold/Crate3" unique_id=1986791801]
 shape = SubResource("ConvexPolygonShape3D_45d1s")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=59644676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.006508, -9.536743e-07, -0.20678234)
+curve = SubResource("Curve3D_45d1s")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1126268574]
+transform = Transform3D(-0.2791288, -5.1238374e-08, 0.9602489, 3.552681e-15, 0.99998826, 5.3359646e-08, -0.960244, 1.4894244e-08, -0.2791302, 6.078211, 0.001001358, 11.798627)
+script = ExtResource("6_y7y61")
+
+[node name="TestZombie" parent="Path3D/PathFollow3D" unique_id=2093768225 instance=ExtResource("7_y7y61")]
+transform = Transform3D(-0.27913138, 5.293768e-15, -0.96025294, -5.1238974e-08, 1, 1.4894419e-08, 0.96025294, 5.3359873e-08, -0.27913138, 0.11677933, 0.9304228, -0.11028457)

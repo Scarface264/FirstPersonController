@@ -1,11 +1,11 @@
-extends Node3D
-@onready var character = $Path3D/PathFollow3D/TestZombie
-@onready var target = $Player
+extends PathFollow3D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#character.target = target #makes zombie follow player
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	progress += 3 * delta

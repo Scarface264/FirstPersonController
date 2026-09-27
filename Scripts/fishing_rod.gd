@@ -155,7 +155,7 @@ func catch_object(object: Node3D):
 
 	# Disable all of its collision shapes.
 	for shape in collision_shapes:
-		shape.disabled = true
+		shape.set_deferred("disabled", true)
 
 	# Prevent the bobber from colliding with the caught object.
 	if object is CollisionObject3D:

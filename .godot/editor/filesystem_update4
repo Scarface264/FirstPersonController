@@ -1,7 +1,6 @@
-res://Scenes/fishing_rod.tscn
+res://test_zombie.gd
+res://Scenes/test_zombie.tscn
 res://Scenes/World.tscn
-res://Scenes/zombie.tscn
-res://Scripts/Player.gd
-res://Scripts/zombie.gd
-res://Scenes/fishing_rod.gd
-res://Scenes/world.gd
+res://Scripts/world.gd
+res://Scenes/path_follow_3d.gd
+res://Scripts/fishing_rod.gd
