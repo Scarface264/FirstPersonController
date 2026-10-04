@@ -1,6 +1,0 @@
-res://test_zombie.gd
-res://Scenes/test_zombie.tscn
-res://Scenes/World.tscn
-res://Scripts/world.gd
-res://Scenes/path_follow_3d.gd
-res://Scripts/fishing_rod.gd
