@@ -7,6 +7,9 @@
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_te4rd"]
 [ext_resource type="Script" uid="uid://qsqxut731f8b" path="res://Scripts/path_follow_3d.gd" id="6_y7y61"]
 [ext_resource type="PackedScene" uid="uid://cp1e4t6hhiuyy" path="res://Scenes/test_zombie.tscn" id="7_y7y61"]
+[ext_resource type="Script" uid="uid://l2pwktve6ik5" path="res://Scenes/hud.gd" id="8_kn06e"]
+[ext_resource type="Script" uid="uid://bwwmghsy1u343" path="res://Scenes/item_slot.gd" id="8_uo7di"]
+[ext_resource type="Texture2D" uid="uid://dxhmood0fkku1" path="res://icon.svg" id="9_kn06e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -130,3 +133,175 @@ script = ExtResource("6_y7y61")
 
 [node name="TestZombie" parent="Path3D/PathFollow3D" unique_id=2093768225 instance=ExtResource("7_y7y61")]
 transform = Transform3D(-0.27913138, 5.293768e-15, -0.96025294, -5.1238974e-08, 1, 1.4894419e-08, 0.96025294, 5.3359873e-08, -0.27913138, 0.11677933, 0.9304228, -0.11028457)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=649182170]
+script = ExtResource("8_kn06e")
+
+[node name="Inventory" type="Panel" parent="HUD" unique_id=1719558644]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 347.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Inventory" unique_id=838848764]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="HUD/Inventory/MarginContainer" unique_id=2133653651]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 7
+
+[node name="ItemSlot" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=590406859]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot" unique_id=577833532]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot2" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=431380319]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot2" unique_id=1696404262]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot3" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=2057831955]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot3" unique_id=1731635934]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot4" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=1924725770]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot4" unique_id=968193008]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot5" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=127489822]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot5" unique_id=940276765]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot6" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=583323632]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot6" unique_id=63783721]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot7" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=1249034325]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot7" unique_id=672935767]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot8" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=1421000577]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot8" unique_id=1059168331]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_kn06e")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

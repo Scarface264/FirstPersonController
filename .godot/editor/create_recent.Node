@@ -1,3 +1,9 @@
+MarginContainer
+TextureRect
+Panel
+GridContainer
+CanvasLayer
+CanvasModulate
 PathFollow3D
 Path3D
 MeshInstance3D
