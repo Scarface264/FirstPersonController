@@ -40,7 +40,7 @@ func _ready():
 
 func _process(_delta):
 	# Cast when the player presses the cast button.
-	if Input.is_action_pressed("inventory"):
+	if Input.is_action_just_pressed("inventory"):
 		invent = !invent
 		
 	if Input.is_action_just_pressed("cast") and not is_cast and !invent:

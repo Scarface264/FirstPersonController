@@ -1,2 +1,4 @@
 res://Scenes/fishing_rod.tscn
 res://Scripts/fishing_rod.gd
+res://Scenes/World.tscn
+res://Item_data.gd

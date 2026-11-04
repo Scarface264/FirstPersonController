@@ -128,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.006508, -9.536743e-07, -0.
 curve = SubResource("Curve3D_45d1s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1126268574]
-transform = Transform3D(-0.27912822, -5.1238246e-08, 0.9602489, 3.552674e-15, 0.9999858, 5.3359646e-08, -0.96024215, 1.4894208e-08, -0.2791302, 6.078211, 0.001001358, 11.798627)
+transform = Transform3D(-0.27912825, -5.1238246e-08, 0.9602489, 3.5526743e-15, 0.9999858, 5.3359646e-08, -0.96024215, 1.4894208e-08, -0.2791302, 6.078211, 0.001001358, 11.798627)
 script = ExtResource("6_y7y61")
 
 [node name="TestZombie" parent="Path3D/PathFollow3D" unique_id=2093768225 instance=ExtResource("7_y7y61")]
