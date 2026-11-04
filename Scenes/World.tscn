@@ -48,7 +48,7 @@ script = ExtResource("1_y7y61")
 [node name="Map" type="Node3D" parent="." unique_id=1777326484]
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Map" unique_id=2063210314]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.45884, 0, -14.940556)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.479423, 0, -1.5274096)
 material_override = ExtResource("5_te4rd")
 use_collision = true
 collision_layer = 3
@@ -66,7 +66,7 @@ size = Vector3(52.2363, 0.002, 59.575)
 environment = SubResource("Environment_g2h84")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map" unique_id=1671441829]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.6959446, -0.050398186, 0.7163248, 0.5154202, 0.6595159, 0.5471573, -0.5000033, 0.7499993, -0.4330102, 0, 13.560633, 0)
 shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=774501822]
@@ -128,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.006508, -9.536743e-07, -0.
 curve = SubResource("Curve3D_45d1s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1126268574]
-transform = Transform3D(-0.2791288, -5.1238374e-08, 0.9602489, 3.552681e-15, 0.99998826, 5.3359646e-08, -0.960244, 1.4894244e-08, -0.2791302, 6.078211, 0.001001358, 11.798627)
+transform = Transform3D(-0.27912822, -5.1238246e-08, 0.9602489, 3.552674e-15, 0.9999858, 5.3359646e-08, -0.96024215, 1.4894208e-08, -0.2791302, 6.078211, 0.001001358, 11.798627)
 script = ExtResource("6_y7y61")
 
 [node name="TestZombie" parent="Path3D/PathFollow3D" unique_id=2093768225 instance=ExtResource("7_y7y61")]
@@ -137,16 +137,23 @@ transform = Transform3D(-0.27913138, 5.293768e-15, -0.96025294, -5.1238974e-08, 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=649182170]
 script = ExtResource("8_kn06e")
 
-[node name="Inventory" type="Panel" parent="HUD" unique_id=1719558644]
+[node name="MainInvent" type="Control" parent="HUD" unique_id=1580584976]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="Panel" parent="HUD/MainInvent" unique_id=1719558644]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -500.0
-offset_right = 500.0
+offset_left = 440.0
+offset_right = 1440.0
 offset_bottom = 347.0
 grow_horizontal = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/Inventory" unique_id=838848764]
+[node name="MarginContainer" type="MarginContainer" parent="HUD/MainInvent/Inventory" unique_id=838848764]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -155,18 +162,18 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="GridContainer" type="GridContainer" parent="HUD/Inventory/MarginContainer" unique_id=2133653651]
+[node name="GridContainer" type="GridContainer" parent="HUD/MainInvent/Inventory/MarginContainer" unique_id=2133653651]
 layout_mode = 2
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 7
 
-[node name="ItemSlot" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=590406859]
+[node name="ItemSlot" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=590406859]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot" unique_id=577833532]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot" unique_id=577833532]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -179,12 +186,12 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot2" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=431380319]
+[node name="ItemSlot2" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=431380319]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot2" unique_id=1696404262]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot2" unique_id=1696404262]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -197,12 +204,12 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot3" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=2057831955]
+[node name="ItemSlot3" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=2057831955]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot3" unique_id=1731635934]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot3" unique_id=1731635934]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -215,12 +222,12 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot4" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=1924725770]
+[node name="ItemSlot4" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1924725770]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot4" unique_id=968193008]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot4" unique_id=968193008]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -233,12 +240,12 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot5" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=127489822]
+[node name="ItemSlot5" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=127489822]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot5" unique_id=940276765]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot5" unique_id=940276765]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -251,12 +258,12 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot6" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=583323632]
+[node name="ItemSlot6" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=583323632]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot6" unique_id=63783721]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot6" unique_id=63783721]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -269,12 +276,12 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot7" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=1249034325]
+[node name="ItemSlot7" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1249034325]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot7" unique_id=672935767]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot7" unique_id=672935767]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -287,12 +294,183 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemSlot8" type="Panel" parent="HUD/Inventory/MarginContainer/GridContainer" unique_id=1421000577]
+[node name="ItemSlot8" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1421000577]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 script = ExtResource("8_uo7di")
 
-[node name="Icon" type="TextureRect" parent="HUD/Inventory/MarginContainer/GridContainer/ItemSlot8" unique_id=1059168331]
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot8" unique_id=1059168331]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_kn06e")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory2" type="Panel" parent="HUD/MainInvent" unique_id=653214821]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 440.0
+offset_top = 424.0
+offset_right = 1440.0
+offset_bottom = 771.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/MainInvent/Inventory2" unique_id=1188920278]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="HUD/MainInvent/Inventory2/MarginContainer" unique_id=1146377549]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 7
+
+[node name="ItemSlot" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=947659656]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot" unique_id=1107600752]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot2" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=553213594]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot2" unique_id=730016930]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot3" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1954664308]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot3" unique_id=232456813]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot4" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=2113240093]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot4" unique_id=2011541880]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot5" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1196466584]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot5" unique_id=1195132102]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot6" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=677216151]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot6" unique_id=125305599]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot7" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1687579894]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot7" unique_id=1131533904]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot8" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=756604493]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("8_uo7di")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot8" unique_id=1854976415]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1

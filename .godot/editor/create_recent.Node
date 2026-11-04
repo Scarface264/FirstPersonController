@@ -1,6 +1,8 @@
+Control
+Panel
+Node
 MarginContainer
 TextureRect
-Panel
 GridContainer
 CanvasLayer
 CanvasModulate
@@ -9,6 +11,5 @@ Path3D
 MeshInstance3D
 RigidBody3D
 Node3D
-Node
 CollisionShape3D
 CharacterBody3D

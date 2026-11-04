@@ -9,6 +9,7 @@ extends Node3D
 @onready var line: MeshInstance3D = $Line
 
 var is_cast := false
+var invent = false
 
 # The bobber's starting position relative to the fishing rod.
 var starting_local_position: Vector3
@@ -39,7 +40,10 @@ func _ready():
 
 func _process(_delta):
 	# Cast when the player presses the cast button.
-	if Input.is_action_just_pressed("cast") and not is_cast:
+	if Input.is_action_pressed("inventory"):
+		invent = !invent
+		
+	if Input.is_action_just_pressed("cast") and not is_cast and !invent:
 		cast()
 
 	# Keep the fishing line connected to the rod and bobber.
@@ -48,7 +52,7 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	# Reel while the reel button is being held.
-	if is_cast and Input.is_action_pressed("reel"):
+	if is_cast and Input.is_action_pressed("reel") and !invent:
 		reel_bobber()
 
 

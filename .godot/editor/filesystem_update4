@@ -1,3 +1,2 @@
-res://Scripts/Player.gd
-res://Scenes/World.tscn
-res://Scenes/hud.gd
+res://Scenes/fishing_rod.tscn
+res://Scripts/fishing_rod.gd

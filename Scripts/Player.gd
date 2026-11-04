@@ -17,6 +17,9 @@ var t_bob = 0.0
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
+
+#inventory true click var
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
@@ -31,14 +34,20 @@ func _ready():
 
 
 func _unhandled_input(event):
+		
+		
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		return
+
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
-	#if event is InputEventMouseButton and event.pressed:
-		#if event.button_index == MOUSE_BUTTON_LEFT:
-			#if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-				#throw_cube()
+		camera.rotation.x = clamp(
+			camera.rotation.x,
+			deg_to_rad(-90),
+			deg_to_rad(60)
+			)
+
 				
 			
 
