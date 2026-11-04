@@ -8,6 +8,8 @@ extends Node3D
 @onready var rod: Node3D = $Rod
 @onready var line: MeshInstance3D = $Line
 
+@export var inventory_hud: CanvasLayer
+
 var is_cast := false
 var invent = false
 
@@ -19,6 +21,7 @@ var caught_object: Node3D = null
 
 
 func _ready():
+	
 	# Remember where the bobber starts relative to the rod.
 	starting_local_position = to_local(bobber.global_position)
 
@@ -188,35 +191,44 @@ func catch_object(object: Node3D):
 # ============================================================
 # FINISH REEL
 # ============================================================
-
 func finish_reel():
+	print("Finish reel called!")
+
 	is_cast = false
 
-	# Stop the bobber completely.
 	bobber.linear_velocity = Vector3.ZERO
 	bobber.angular_velocity = Vector3.ZERO
 
-	# If we caught something, remove it.
 	if caught_object != null:
+		print("Caught object exists: ", caught_object.name)
 
-		# Remove the collision exception first.
+		var item_data = caught_object.get("item_data")
+
+		print("Item data found: ", item_data)
+
+		if item_data is ItemData:
+			print("ItemData is valid!")
+
+			if is_instance_valid(inventory_hud):
+				print("Inventory HUD found!")
+
+				inventory_hud.add_item(item_data)
+				print("Caught: ", item_data.name)
+			else:
+				print("Inventory HUD is missing!")
+		else:
+			print("Object does not have valid ItemData!")
+
 		if caught_object is CollisionObject3D:
 			bobber.remove_collision_exception_with(caught_object)
 
-		# Delete the caught object.
 		caught_object.queue_free()
-
 		caught_object = null
 
-	# Return the bobber to its original position.
 	bobber.global_position = to_global(starting_local_position)
-
-	# Freeze the bobber again.
 	bobber.freeze = true
 
-	# Update the fishing line.
 	update_line()
-
 
 # ============================================================
 # FISHING LINE

@@ -1,0 +1,384 @@
+[gd_scene format=3 uid="uid://cmcmp3nbcyt38"]
+
+[ext_resource type="Script" uid="uid://oh8l3b7elm2t" path="res://Scripts/Player.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://c1kd3nia1sami" path="res://Scenes/fishing_rod.tscn" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://l2pwktve6ik5" path="res://Scripts/hud.gd" id="3_fkybt"]
+[ext_resource type="Script" uid="uid://bwwmghsy1u343" path="res://Scripts/item_slot.gd" id="4_x3wgy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[node name="Player" type="CharacterBody3D" unique_id=277964587]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_cvnsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1887525909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_xc2g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=94297071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_wydro")
+
+[node name="Head" type="Node3D" parent="." unique_id=1448948523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=754635323]
+
+[node name="throw_origin" type="Node3D" parent="Head/Camera3D" unique_id=1282252338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1765392)
+
+[node name="FishingRod" parent="Head/Camera3D" unique_id=859916927 node_paths=PackedStringArray("inventory_hud") instance=ExtResource("2_6t5aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2893834, -0.5265169, -0.86505276)
+inventory_hud = NodePath("../../../HUD")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=830999870]
+script = ExtResource("3_fkybt")
+
+[node name="MainInvent" type="Control" parent="HUD" unique_id=1023149501]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="Panel" parent="HUD/MainInvent" unique_id=1350327232]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 440.0
+offset_right = 1440.0
+offset_bottom = 347.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/MainInvent/Inventory" unique_id=1427050089]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="HUD/MainInvent/Inventory/MarginContainer" unique_id=735301263]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 7
+
+[node name="ItemSlot" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=2146419721]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot" unique_id=1988358473]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot2" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1306920282]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot2" unique_id=253918193]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot3" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=958692567]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot3" unique_id=691467664]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot4" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=2144759180]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot4" unique_id=1298456333]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot5" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1623582624]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot5" unique_id=1443910120]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot6" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1939551051]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot6" unique_id=1062513388]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot7" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=1358616593]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot7" unique_id=1925863226]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot8" type="Panel" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer" unique_id=691735658]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory/MarginContainer/GridContainer/ItemSlot8" unique_id=1841510207]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory2" type="Panel" parent="HUD/MainInvent" unique_id=74088955]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 440.0
+offset_top = 424.0
+offset_right = 1440.0
+offset_bottom = 771.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/MainInvent/Inventory2" unique_id=1190327276]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="HUD/MainInvent/Inventory2/MarginContainer" unique_id=649931069]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 7
+
+[node name="ItemSlot" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1910610936]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot" unique_id=1677553771]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot2" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1224406515]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot2" unique_id=1852642170]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot3" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=314959743]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot3" unique_id=1070412772]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot4" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=2074869835]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot4" unique_id=398185362]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot5" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1913204589]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot5" unique_id=1578111220]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot6" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=274795148]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot6" unique_id=1612183262]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot7" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=1413706430]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot7" unique_id=933613079]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot8" type="Panel" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer" unique_id=972383093]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("4_x3wgy")
+
+[node name="Icon" type="TextureRect" parent="HUD/MainInvent/Inventory2/MarginContainer/GridContainer/ItemSlot8" unique_id=9052521]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

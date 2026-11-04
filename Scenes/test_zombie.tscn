@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dob0a8f37vtl1" path="res://Scripts/test_zombie.gd" id="1_0g2t2"]
 [ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="2_j7xdx"]
+[ext_resource type="Resource" uid="uid://d0q2rc3cr0bwx" path="res://resources/wood.tres" id="2_kp7iv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hx1nv"]
 
@@ -16,6 +17,7 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 
 [node name="TestZombie" type="RigidBody3D" unique_id=2093768225 groups=["catchable"]]
 script = ExtResource("1_0g2t2")
+item_data = ExtResource("2_kp7iv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=76007591]
 mesh = SubResource("CapsuleMesh_hx1nv")

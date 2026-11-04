@@ -2,3 +2,9 @@ res://Scenes/fishing_rod.tscn
 res://Scripts/fishing_rod.gd
 res://Scenes/World.tscn
 res://Item_data.gd
+res://Scenes/player.tscn
+res://Scenes/test_zombie.tscn
+res://Scripts/test_zombie.gd
+res://resources/wood.tres
+res://Scripts/hud.gd
+res://Scripts/item_slot.gd
