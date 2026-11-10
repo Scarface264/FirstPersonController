@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cmcmp3nbcyt38" path="res://Scenes/player.tscn" id="4_uo7di"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_te4rd"]
 [ext_resource type="Script" uid="uid://qsqxut731f8b" path="res://Scripts/path_follow_3d.gd" id="6_y7y61"]
+[ext_resource type="Resource" uid="uid://d0q2rc3cr0bwx" path="res://resources/wood.tres" id="7_q2d71"]
 [ext_resource type="PackedScene" uid="uid://cp1e4t6hhiuyy" path="res://Scenes/test_zombie.tscn" id="7_y7y61"]
+[ext_resource type="PackedScene" uid="uid://dhjmwcuty2tba" path="res://Scenes/bag.tscn" id="8_q2d71"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -67,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.818795, 4.6277814, 1.208652
 [node name="Crate hold" type="Node3D" parent="." unique_id=2143751048]
 
 [node name="Crate" type="RigidBody3D" parent="Crate hold" unique_id=626516200 groups=["catchable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8609705, 1.0286674, 6.7965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8609705, 7.4676743, 6.7965)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Crate hold/Crate" unique_id=698408918]
 mesh = SubResource("BoxMesh_hx1nv")
@@ -102,13 +104,11 @@ transform = Transform3D(-0.27912825, -5.1238246e-08, 0.9602489, 3.5526743e-15, 0
 script = ExtResource("6_y7y61")
 
 [node name="TestZombie" parent="Path3D/PathFollow3D" unique_id=2093768225 instance=ExtResource("7_y7y61")]
-transform = Transform3D(-0.27913138, 5.293768e-15, -0.96025294, -5.1238974e-08, 1, 1.4894419e-08, 0.96025294, 5.3359873e-08, -0.27913138, 0.11677933, 0.9304228, -0.11028457)
+transform = Transform3D(1, 0, 0, 8.881784e-16, 1, -6.217249e-15, 2.9802322e-08, 1.7763568e-15, 1, -3.9779663, 8.766074e-08, -1.64184)
 
-[node name="TestZombie2" parent="Path3D/PathFollow3D" unique_id=2115442941 instance=ExtResource("7_y7y61")]
-transform = Transform3D(-0.2791314, 4.923091e-15, -0.96025294, -5.1238978e-08, 1, 1.489442e-08, 0.960253, 5.3359877e-08, -0.27913138, -8.326358, 0.93042344, -11.276698)
+[node name="TestZombie2" parent="Path3D/PathFollow3D" unique_id=2052097791 instance=ExtResource("7_y7y61")]
+transform = Transform3D(1, 0, 0, 8.881784e-16, 1, -6.217249e-15, 2.9802322e-08, 1.7763568e-15, 1, -0.5258112, 2.3515895e-08, -0.43972206)
+item_data = ExtResource("7_q2d71")
 
-[node name="TestZombie3" parent="Path3D/PathFollow3D" unique_id=332038057 instance=ExtResource("7_y7y61")]
-transform = Transform3D(-0.2791314, 4.923091e-15, -0.96025294, -5.1238978e-08, 1, 1.489442e-08, 0.960253, 5.3359877e-08, -0.27913138, -9.244229, 0.9304229, -1.371521)
-
-[node name="TestZombie4" parent="Path3D/PathFollow3D" unique_id=252930000 instance=ExtResource("7_y7y61")]
-transform = Transform3D(-0.2791314, 4.923091e-15, -0.96025294, -5.1238978e-08, 1, 1.489442e-08, 0.960253, 5.3359877e-08, -0.27913138, -3.3937578, 0.93042314, -5.633773)
+[node name="Bag" parent="." unique_id=1197400969 instance=ExtResource("8_q2d71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.432849, 1.0953717, 2.760676)

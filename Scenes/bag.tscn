@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dhjmwcuty2tba"]
+
+[ext_resource type="Script" uid="uid://cqcvawhypk4x2" path="res://Scripts/bag.gd" id="1_5tw1m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hx1nv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yeinl"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Bag" type="RigidBody3D" unique_id=1197400969]
+script = ExtResource("1_5tw1m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=38529939]
+mesh = SubResource("BoxMesh_hx1nv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1533119720]
+shape = SubResource("ConvexPolygonShape3D_yeinl")

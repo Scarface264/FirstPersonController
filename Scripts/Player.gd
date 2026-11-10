@@ -19,6 +19,7 @@ const FOV_CHANGE = 1.5
 
 
 #inventory true click var
+var current_target: Node3D = null #shader target chest thing
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
@@ -27,15 +28,11 @@ var gravity = 9.8
 @onready var camera = $Head/Camera3D
 
 
-
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
 func _unhandled_input(event):
-		
-		
+
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		return
 
@@ -46,12 +43,16 @@ func _unhandled_input(event):
 			camera.rotation.x,
 			deg_to_rad(-90),
 			deg_to_rad(60)
-			)
+		)
 
-				
+	if event.is_action_pressed("interact"):
+		if is_instance_valid(current_target):
+			if current_target.has_method("interact"):
+				current_target.interact()
 			
 
-	
+func _process(_delta):
+	update_interaction_target()
 
 
 func _physics_process(delta):
@@ -102,3 +103,25 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+
+func update_interaction_target():
+	var raycast = $Head/Camera3D/RayCast3D
+	var new_target: Node3D = null
+
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+
+		if collider.has_method("set_highlight"):
+			new_target = collider
+
+	# Remove highlight from previous object
+	if current_target != new_target:
+		if is_instance_valid(current_target):
+			current_target.set_highlight(false)
+
+		current_target = new_target
+
+	# Highlight new object
+	if is_instance_valid(current_target):
+		current_target.set_highlight(true)
