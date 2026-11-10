@@ -112,3 +112,6 @@ item_data = ExtResource("7_q2d71")
 
 [node name="Bag" parent="." unique_id=1197400969 instance=ExtResource("8_q2d71")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.432849, 1.0953717, 2.760676)
+
+[node name="Bag2" parent="." unique_id=980313417 instance=ExtResource("8_q2d71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2342525, 1.1902423, 4.558621)

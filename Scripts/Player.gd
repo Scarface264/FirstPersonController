@@ -49,6 +49,7 @@ func _unhandled_input(event):
 		if is_instance_valid(current_target):
 			if current_target.has_method("interact"):
 				current_target.interact()
+				
 			
 
 func _process(_delta):

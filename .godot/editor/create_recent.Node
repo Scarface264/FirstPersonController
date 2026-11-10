@@ -1,9 +1,10 @@
+Panel
+HBoxContainer
 CenterContainer
 RayCast3D
 MeshInstance3D
 RigidBody3D
 Control
-Panel
 Node
 MarginContainer
 TextureRect
@@ -11,4 +12,3 @@ GridContainer
 CanvasLayer
 CanvasModulate
 PathFollow3D
-Path3D

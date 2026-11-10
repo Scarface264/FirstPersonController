@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1794275426
+::res://::1794277727
 icon.svg::CompressedTexture2D::8788810445164620394::1789915619::1793931466::1::::<><><>0<>0<>2ec37d050015da7f2a3de2ac4c4986e1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1791133872
 ::res://Materials/::1789915619
@@ -10,15 +10,16 @@ Red.tres::StandardMaterial3D::4268741505349743764::1789915619::0::1::::<><><>0<>
 ::res://resources/::1794274496
 idk.tres::Resource/ItemData::1032445786813615226::1794274496::0::1::::<><><>0<>0<><>::uid://ch38ypragya8k::::res://Scripts/Item_data.gd
 wood.tres::Resource/ItemData::8948683051811943967::1794274153::0::1::::<><><>0<>0<><>::uid://ch38ypragya8k::::res://Scripts/Item_data.gd
-::res://Scenes/::1794275539
-bag.tscn::PackedScene::7669931384550390054::1794275833::0::1::::<><><>0<>0<><>::uid://cqcvawhypk4x2::::res://bag.gd
+::res://Scenes/::1794277511
+bag.tscn::PackedScene::7669931384550390054::1794275898::0::1::::<><><>0<>0<><>::uid://cqcvawhypk4x2::::res://Scripts/bag.gd
 fishing_rod.tscn::PackedScene::6618627927920718160::1793757333::0::1::::<><><>0<>0<><>::uid://bcce8di1vybnd::::res://Scripts/fishing_rod.gd
 hook.tscn::PackedScene::7968382546822930643::1789928761::0::1::::<><><>0<>0<><>::uid://d3j4i135o8kbw::::res://Scripts/hook.gd
-player.tscn::PackedScene::5619993128157817061::1794275539::0::1::::<><><>0<>0<><>::uid://oh8l3b7elm2t::::res://Scripts/Player.gd<>uid://c1kd3nia1sami::::res://Scenes/fishing_rod.tscn<>uid://l2pwktve6ik5::::res://Scripts/hud.gd<>uid://bwwmghsy1u343::::res://Scripts/item_slot.gd
+player.tscn::PackedScene::5619993128157817061::1794277511::0::1::::<><><>0<>0<><>::uid://oh8l3b7elm2t::::res://Scripts/Player.gd<>uid://c1kd3nia1sami::::res://Scenes/fishing_rod.tscn<>uid://l2pwktve6ik5::::res://Scripts/hud.gd<>uid://bwwmghsy1u343::::res://Scripts/item_slot.gd
 test_zombie.tscn::PackedScene::5879643545716880232::1794274153::0::1::::<><><>0<>0<><>::uid://dob0a8f37vtl1::::res://Scripts/test_zombie.gd<>uid://b122sws3pt7w7::::res://Materials/Red.tres
-World.tscn::PackedScene::7285665154832654338::1794275305::0::1::::<><><>0<>0<><>::uid://b4s0xnt1f6lia::::res://Materials/Green.tres<>uid://hxl5l0rh7kj7::::res://Scripts/world.gd<>uid://cmcmp3nbcyt38::::res://Scenes/player.tscn<>uid://p2nkjd3ge3qm::::res://Materials/Blue.tres<>uid://qsqxut731f8b::::res://Scripts/path_follow_3d.gd<>uid://d0q2rc3cr0bwx::::res://resources/wood.tres<>uid://cp1e4t6hhiuyy::::res://Scenes/test_zombie.tscn<>uid://dhjmwcuty2tba::::res://Scenes/bag.tscn
+World.tscn::PackedScene::7285665154832654338::1794277161::0::1::::<><><>0<>0<><>::uid://b4s0xnt1f6lia::::res://Materials/Green.tres<>uid://hxl5l0rh7kj7::::res://Scripts/world.gd<>uid://cmcmp3nbcyt38::::res://Scenes/player.tscn<>uid://p2nkjd3ge3qm::::res://Materials/Blue.tres<>uid://qsqxut731f8b::::res://Scripts/path_follow_3d.gd<>uid://d0q2rc3cr0bwx::::res://resources/wood.tres<>uid://cp1e4t6hhiuyy::::res://Scenes/test_zombie.tscn<>uid://dhjmwcuty2tba::::res://Scenes/bag.tscn
 zombie.tscn::PackedScene::2245922088680521145::1793756780::0::1::::<><><>0<>0<><>::uid://d1vi3jy60sn31::::res://Scripts/zombie.gd<>uid://b122sws3pt7w7::::res://Materials/Red.tres<>uid://p2nkjd3ge3qm::::res://Materials/Blue.tres
-::res://Scripts/::1794275539
+::res://Scripts/::1794275898
+bag.gd::GDScript::5901267845389192221::1794275898::0::1::::<>RigidBody3D<><>0<>0<><>::
 fishing_rod.gd::GDScript::2531229096786027537::1793931451::0::1::::<>Node3D<><>0<>0<><>::
 hook.gd::GDScript::9144905562116921992::1789928780::0::1::::<>RigidBody3D<><>0<>0<><>::
 hud.gd::GDScript::828766077280877482::1793931546::0::1::::<>CanvasLayer<><>0<>0<><>::
@@ -26,7 +27,6 @@ Item_data.gd::GDScript::5324013183902003020::1793756839::0::1::::ItemData<>Resou
 item_slot.gd::GDScript::3976731269591700390::1793758717::0::1::::InventorySlot<>Panel<><>0<>0<><>::
 path_follow_3d.gd::GDScript::1161193924236336711::1790548630::0::1::::<>PathFollow3D<><>0<>0<><>::
 Player.gd::GDScript::999119233363453489::1794275539::0::1::::<>CharacterBody3D<><>0<>0<><>::
-bag.gd::GDScript::5901267845389192221::1794275833::0::1::::<>RigidBody3D<><>0<>0<><>::
 test_zombie.gd::GDScript::8145489906895357124::1793758412::0::1::::<>RigidBody3D<><>0<>0<><>::
 world.gd::GDScript::539524671707167690::1790548393::0::1::::<>Node3D<><>0<>0<><>::
 zombie.gd::GDScript::9028060167902956550::1793756780::0::1::::<>CharacterBody3D<><>0<>0<><>::
